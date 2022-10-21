@@ -10,6 +10,8 @@ router.post('/Comments', controllers.createComment)
 
 router.get('/allSnails', controllers.getAllSnails)
 
+router.put('/allSnails/:id', controllers.updateASnail)
+
 router.get('/allSnails/:id', controllers.findOneSnail)
 
 router.delete('/allSnails/:id', controllers.deleteASnail)
