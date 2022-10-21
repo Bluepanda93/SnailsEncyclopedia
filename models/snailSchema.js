@@ -8,7 +8,7 @@ const Snail = new Schema(
     link: { type: String, required: true },
     name: { type: String, required: true },
     region: { type: String, required: true },
-    comments: { type: Array, required: true }
+    comments: [{ type: Schema.Types.ObjectId, ref: 'Comments' }]
   },
   { timestamps: true }
 )
