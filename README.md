@@ -35,3 +35,5 @@ It is quite interesting how many people come across snails and snap a quick pic 
 Follow along with me on my Trello Board to track my progress with this project using this link [@Trello](https://trello.com/b/DPnZRE4E/daily-task-management-template-trello)!
 
 ### Sources Cited
+
+![wikipedia](https://en.wikipedia.org/wiki/Deroceras_reticulatum)
