@@ -1,6 +1,7 @@
 const Snail = require('../models/snailSchema')
 const Comments = require('../models/commentsSchema')
 
+// Create a new Snail
 const createSnail = async (req, res) => {
   try {
     const snail = await new Snail(req.body)
@@ -13,6 +14,7 @@ const createSnail = async (req, res) => {
   }
 }
 
+// Find all Snails in collection
 const getAllSnails = async (req, res) => {
   try {
     const allSnails = await Snail.find({})
@@ -24,6 +26,7 @@ const getAllSnails = async (req, res) => {
   }
 }
 
+// Find a single snail
 const findOneSnail = async (req, res) => {
   try {
     const { id } = req.params
@@ -37,6 +40,7 @@ const findOneSnail = async (req, res) => {
   }
 }
 
+// Delete data on a single snail
 const deleteASnail = async (req, res) => {
   try {
     const { id } = req.params
@@ -50,6 +54,19 @@ const deleteASnail = async (req, res) => {
   }
 }
 
+// Edit data on a single snail
+const updateASnail = async (req, res) => {
+  try {
+    const updateSnail = await Snail.findByIdAndUpdate(req.params.id, req.body, {
+      new: true
+    })
+    res.status(200).json(updateSnail)
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+}
+
+// Create a comment associated with a single snail
 const createComment = async (req, res) => {
   try {
     const comment = await new Comments(req.body)
@@ -93,6 +110,7 @@ module.exports = {
   getAllSnails,
   findOneSnail,
   deleteASnail,
+  updateASnail,
   createComment,
   findOneComment,
   snailComments
