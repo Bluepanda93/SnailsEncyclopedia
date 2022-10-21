@@ -12,7 +12,7 @@ app.use(express.json())
 
 // app.use() middleware here ^ ///////////////////
 
-app.use('/api', routes)
+app.use('/', routes)
 
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 

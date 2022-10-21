@@ -12,6 +12,46 @@ const createSnail = async (req, res) => {
   }
 }
 
+const getAllSnails = async (req, res) => {
+  try {
+    const allSnails = await Snail.find({})
+    return res.status(200).json({
+      allSnails
+    })
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+}
+
+const findOneSnail = async (req, res) => {
+  try {
+    const { id } = req.params
+    const singleSnail = await Snail.findById(id)
+    if (singleSnail) {
+      return res.status(200).json({ singleSnail })
+    }
+    return res.status(404).send('No Snail Found!')
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+}
+
+const deleteASnail = async (req, res) => {
+  try {
+    const { id } = req.params
+    const deleteSnail = await Snail.findByIdAndDelete(id)
+    if (deleteSnail) {
+      return res.status(200).send('Snail Trail Wiped.')
+    }
+    throw new Error('No Snail Found!')
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+}
+
 module.exports = {
-  createSnail
+  createSnail,
+  getAllSnails,
+  findOneSnail,
+  deleteASnail
 }

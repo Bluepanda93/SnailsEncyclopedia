@@ -1,13 +1,16 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
-const Plant = new Schema(
+const Snail = new Schema(
   {
-    name: { type: String, required: true },
+    image: { type: String, required: true },
     description: { type: String, required: true },
-    image: { type: String, required: true }
+    link: { type: String, required: true },
+    name: { type: String, required: true },
+    region: { type: String, required: true },
+    comments: { type: Array, required: true }
   },
   { timestamps: true }
 )
 
-module.exports = mongoose.model('Snail', snailSchema)
+module.exports = mongoose.model('Snail', Snail)
