@@ -1,4 +1,5 @@
 const Snail = require('../models/snailSchema')
+const Comments = require('../models/commentsSchema')
 
 const createSnail = async (req, res) => {
   try {
@@ -49,9 +50,50 @@ const deleteASnail = async (req, res) => {
   }
 }
 
+const createComment = async (req, res) => {
+  try {
+    const comment = await new Comments(req.body)
+    await comment.save()
+    return res.status(201).json({
+      comment
+    })
+  } catch (error) {
+    return res.status(500).json({ error: error.message })
+  }
+}
+
+const findOneComment = async (req, res) => {
+  try {
+    const { id } = req.params
+    const singleComment = await Comments.findById(id)
+    if (singleComment) {
+      return res.status(200).json({ singleComment })
+    }
+    return res.status(404).send('No Comments Found!')
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+}
+
+const snailComments = async (req, res) => {
+  try {
+    const { snailCom } = req.params
+    const singleComment = await Comments.find({ snail: snailCom })
+    if (singleComment) {
+      return res.status(200).json({ singleComment })
+    }
+    return res.status(404).send('No Comments Found!')
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+}
+
 module.exports = {
   createSnail,
   getAllSnails,
   findOneSnail,
-  deleteASnail
+  deleteASnail,
+  createComment,
+  findOneComment,
+  snailComments
 }
