@@ -21,6 +21,10 @@ function App() {
     apiCall()
   }, [])
 
+  const handleChange = (event) => {
+    setFormState({ ...formState, [event.target.id]: event.target.value })
+  }
+
   return (
     <div className="App">
       <h1>Welcome to the Snail Trail!</h1>
@@ -32,15 +36,19 @@ function App() {
       <h3>Input Snail:</h3>
       <form>
         <label htmlFor="image">Image: </label>
-        <input id="image" value={formState.image} />
+        <input id="image" value={formState.image} onChange={handleChange} />
         <label htmlFor="description">Description: </label>
-        <input id="description" value={formState.description} />
+        <input
+          id="description"
+          value={formState.description}
+          onChange={handleChange}
+        />
         <label htmlFor="link">Link: </label>
-        <input id="link" value={formState.link} />
+        <input id="link" value={formState.link} onChange={handleChange} />
         <label htmlFor="name">Name: </label>
-        <input id="name" value={formState.name} />
+        <input id="name" value={formState.name} onChange={handleChange} />
         <label htmlFor="region">Region: </label>
-        <input id="region" value={formState.region} />
+        <input id="region" value={formState.region} onChange={handleChange} />
         <button type="submit">Submit Snail</button>
       </form>
     </div>
