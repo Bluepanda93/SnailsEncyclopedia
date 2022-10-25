@@ -4,6 +4,13 @@ import axios from 'axios'
 
 function App() {
   const [allSnails, updateSnails] = useState([])
+  const [formState, setFormState] = useState({
+    image: '',
+    description: '',
+    link: '',
+    name: '',
+    region: ''
+  })
 
   useEffect(() => {
     const apiCall = async () => {
@@ -25,15 +32,16 @@ function App() {
       <h3>Input Snail:</h3>
       <form>
         <label htmlFor="image">Image: </label>
-        <input id="image" />
+        <input id="image" value={formState.image} />
         <label htmlFor="description">Description: </label>
-        <input id="description" />
+        <input id="description" value={formState.description} />
         <label htmlFor="link">Link: </label>
-        <input id="link" />
+        <input id="link" value={formState.link} />
         <label htmlFor="name">Name: </label>
-        <input id="name" />
+        <input id="name" value={formState.name} />
         <label htmlFor="region">Region: </label>
-        <input id="region" />
+        <input id="region" value={formState.region} />
+        <button type="submit">Submit Snail</button>
       </form>
     </div>
   )
