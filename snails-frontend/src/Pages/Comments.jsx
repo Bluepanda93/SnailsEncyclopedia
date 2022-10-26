@@ -1,14 +1,14 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 
+
 const Comments = () => {
     const [allSnails, updateSnails] = useState([])
     const [formState, setFormState] = useState({
-      image: '',
-      description: '',
-      link: '',
       name: '',
-      region: ''
+      title: '',
+      body: '',
+      snail: ''
     })
   
   
@@ -16,7 +16,7 @@ const Comments = () => {
     const apiCall = async () => {
       let response = await axios.get('http://localhost:3001/comments')
       console.log(response.data)
-      updateSnails(response.data.allSnails)
+      updateSnails(response.data)
     }
     apiCall()
   }, [])

@@ -4,6 +4,7 @@ import AddSnails from './Pages/AddSnails'
 import Comments from './Pages/Comments'
 import Home from './components/Home'
 import { Routes, Route } from 'react-router-dom'
+import CommentsId from './Pages/CommentsId'
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/:id" element={<CommentsId />} />
           <Route path="/addSnails" element={<AddSnails />} />
           <Route path="/comments" element={<Comments />} />
         </Routes>

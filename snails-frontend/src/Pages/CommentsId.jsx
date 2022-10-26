@@ -1,17 +1,18 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 
-function AddSnails() {
-  let navigate = useNavigate
+function CommentsId() {
+  let navigate = useNavigate()
+  let {id} = useParams()
   const [allSnails, updateSnails] = useState([])
-  const [formState, setFormState] = useState({
-    image: '',
-    description: '',
-    link: '',
-    name: '',
-    region: ''
-  })
+  // const [formState, setFormState] = useState({
+  //   image: '',
+  //   description: '',
+  //   link: '',
+  //   name: '',
+  //   region: ''
+  // })
 const showComments = ( id ) => { 
   navigate(`${id}`)
 } 
@@ -27,32 +28,32 @@ const showComments = ( id ) => {
 
 useEffect(() => {
   const apiCall = async () => {
-    let response = await axios.get('http://localhost:3001/allSnails')
+    let response = await axios.get(`http://localhost:3001/comments/${id}`)
     console.log(response.data)
-    updateSnails(response.data.allSnails)
+    updateSnails(response.data)
     }
   apiCall()
-}, [])
+}, [id])
 
-const handleChange = (event) => {
-  setFormState({ ...formState, [event.target.id]: event.target.value })
-}
+// const handleChange = (event) => {
+//   setFormState({ ...formState, [event.target.id]: event.target.value })
+// }
 
-const handleSubmit = async (event) => {
-  event.preventDefault()
-  let newSnail = await axios
-    .post('http://localhost:3001/allSnails', formState)
-    .then((response) => {
-      return response
-    })
-    .catch((error) => {
-      console.log(error)
-    })
+// const handleSubmit = async (event) => {
+//   event.preventDefault()
+//   let newSnail = await axios
+//     .post('http://localhost:3001/allSnails', formState)
+//     .then((response) => {
+//       return response
+//     })
+//     .catch((error) => {
+//       console.log(error)
+//     })
 
-  updateSnails([...allSnails, newSnail.data])
-  setFormState({ image: '', description: '', link: '', name: '', region: '' })
-  // console.log(newSnail.data)
-}
+//   updateSnails([...allSnails, newSnail.data])
+//   setFormState({ image: '', description: '', link: '', name: '', region: '' })
+//   // console.log(newSnail.data)
+// }
 
 return (
   <div className="App">
@@ -64,7 +65,7 @@ return (
         </div>
       ))}
     </div>
-    <h3>Input Snail:</h3>
+    {/* <h3>Input Snail:</h3>
     <form onSubmit={handleSubmit}>
       <label htmlFor="image">Image: </label>
       <input id="image" value={formState.image} onChange={handleChange} />
@@ -81,9 +82,9 @@ return (
       <label htmlFor="region">Region: </label>
       <input id="region" value={formState.region} onChange={handleChange} />
       <button type="submit">Submit Snail</button>
-    </form>
+    </form> */}
   </div>
 )
 }
 
-export default AddSnails
+export default CommentsId
