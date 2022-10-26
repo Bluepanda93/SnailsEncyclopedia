@@ -25,6 +25,22 @@ function App() {
     setFormState({ ...formState, [event.target.id]: event.target.value })
   }
 
+  const handleSubmit = async (event) => {
+    event.preventDefault()
+    let newSnail = await axios
+      .post('http://localhost:3001/allSnails', formState)
+      .then((response) => {
+        return response
+      })
+      .catch((error) => {
+        console.log(error)
+      })
+
+    updateSnails([...allSnails, newSnail.data])
+    setFormState({ image: '', description: '', link: '', name: '', region: '' })
+    // console.log(newSnail.data)
+  }
+
   return (
     <div className="App">
       <h1>Welcome to the Snail Trail!</h1>
@@ -34,7 +50,7 @@ function App() {
         ))}
       </div>
       <h3>Input Snail:</h3>
-      <form>
+      <form onSubmit={handleSubmit}>
         <label htmlFor="image">Image: </label>
         <input id="image" value={formState.image} onChange={handleChange} />
         <label htmlFor="description">Description: </label>
