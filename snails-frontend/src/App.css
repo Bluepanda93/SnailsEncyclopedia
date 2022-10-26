@@ -1,3 +1,7 @@
+/* Fonts from GoogleFonts */
+@import url('https://fonts.googleapis.com/css2?family=Alkalami&family=DM+Sans&family=Fuzzy+Bubbles&family=Poiret+One&family=Roboto:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alkalami&family=DM+Sans&family=Fuzzy+Bubbles&family=Indie+Flower&family=Poiret+One&family=Roboto:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alkalami&family=DM+Sans&family=Fuzzy+Bubbles&family=Indie+Flower&family=Kolker+Brush&family=Poiret+One&family=Roboto:wght@900&display=swap');
 /* .App {
   text-align: center;
 }
@@ -37,5 +41,14 @@
   }
 } */
 body {
-  background-color: greenyellow
+  background-color: greenyellow;
+  font-family: 'Indie Flower', cursive;
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+  font-family: 'Fuzzy Bubbles', cursive;
+  font-size: 50px;
+  font-weight: bolder;
 }
