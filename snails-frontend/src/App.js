@@ -1,8 +1,9 @@
 import './App.css'
+import Nav from './components/Nav'
 import AddSnails from './Pages/AddSnails'
+import Comments from './Pages/Comments'
 import Home from './components/Home'
 import { Routes, Route } from 'react-router-dom'
-import Nav from './components/Nav'
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/addSnails" element={<AddSnails />} />
+          <Route path="/comments" element={<Comments />} />
         </Routes>
       </main>
     </div>
