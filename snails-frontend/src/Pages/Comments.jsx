@@ -50,23 +50,19 @@ const Comments = () => {
         ))}
       </div>
       {/* <h3>Input Snail:</h3> */}
-      {/* <form onSubmit={handleSubmit}>
-        <label htmlFor="image">Image: </label>
-        <input id="image" value={formState.image} onChange={handleChange} />
-        <label htmlFor="description">Description: </label>
+      <form onSubmit={handleSubmit}>
+        <label htmlFor="name">Your Name: </label>
+        <input id="name" value={formState.image} onChange={handleChange} />
+        <label htmlFor="title">Title: </label>
         <input
-          id="description"
+          id="title"
           value={formState.description}
           onChange={handleChange}
         />
-        <label htmlFor="link">Link: </label>
-        <input id="link" value={formState.link} onChange={handleChange} />
-        <label htmlFor="name">Name: </label>
-        <input id="name" value={formState.name} onChange={handleChange} />
-        <label htmlFor="region">Region: </label>
-        <input id="region" value={formState.region} onChange={handleChange} />
-        <button type="submit">Submit Snail</button>
-      </form> */}
+        <label htmlFor="body">Comment: </label>
+        <input id="body" value={formState.link} onChange={handleChange} />
+        <button type="submit">Submit Comment</button>
+      </form>
     </div>
   )
   }

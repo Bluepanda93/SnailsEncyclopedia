@@ -3,7 +3,7 @@ import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 
 function AddSnails() {
-  let navigate = useNavigate
+  let navigate = useNavigate()
   const [allSnails, updateSnails] = useState([])
   const [formState, setFormState] = useState({
     image: '',
@@ -59,7 +59,7 @@ return (
     <h1>Welcome to the Snail Trail!</h1>
     <div>
       {allSnails.map((snails) => (
-        <div onClick = {() => {showComments(snails._id)}}>
+        <div onClick = {() => showComments(snails._id)}>
         <h3>{snails.name}</h3>
         </div>
       ))}
