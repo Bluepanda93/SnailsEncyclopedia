@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
-
+import {useParams} from 'react-router-dom'
 
 const Comments = () => {
     const [allSnails, updateSnails] = useState([])
@@ -10,6 +10,8 @@ const Comments = () => {
       body: '',
       snail: ''
     })
+
+    let { id } = useParams()
   
   
   useEffect(() => {
@@ -28,7 +30,7 @@ const Comments = () => {
   const handleSubmit = async (event) => {
     event.preventDefault()
     let newSnail = await axios
-      .post('http://localhost:3001/comments', formState)
+      .post(`http://localhost:3001/addSnails/${id}`, formState)
       .then((response) => {
         return response
       })
@@ -36,7 +38,7 @@ const Comments = () => {
         console.log(error)
       })
   
-    updateSnails([...allSnails, newSnail.data])
+    // updateSnails([...allSnails, newSnail.data])
     setFormState({ image: '', description: '', link: '', name: '', region: '' })
     // console.log(newSnail.data)
   }
