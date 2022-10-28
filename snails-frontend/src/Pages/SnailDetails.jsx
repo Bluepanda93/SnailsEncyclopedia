@@ -48,7 +48,7 @@ const SnailDetails = () => {
   return (
     <div className="comments">
       {snails.name}
-      <form onSubmit={handleUpdate}>
+      <form onSubmit={handleUpdate} className="comments-b">
       <label htmlFor="image">Image: </label>
       <input id="image" value={formState.image} onChange={handleChange} />
       <label htmlFor="description">Description: </label>
@@ -69,7 +69,7 @@ const SnailDetails = () => {
       <Comments />
      
       {comments.map((comment) => (
-         <ul>
+         <ul className='comments-a'>
         <p>{comment.name}</p>
         <h3>{comment.title}</h3>
         <h4>{comment.body}</h4>
