@@ -41,6 +41,7 @@ Follow along with me on my Trello Board to track my progress with this project u
 [wikiFandom](https://atf.fandom.com/wiki/Snail)
 [cfaes](https://cfaes.osu.edu/news/articles/entomologist-offers-guidance-controlling-slugs-in-no-till-soybean-corn-fields)
 [crateandbasket](https://crateandbasket.com/types-of-snails/)
+[comicvine](https://comicvine.gamespot.com/gary-the-snail/4005-68853/)
 
 ### ScreenShot
 
