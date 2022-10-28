@@ -6,7 +6,7 @@ router.get('/', (req, res) => res.send('I am Groot!'))
 
 router.post('/allSnails', controllers.createSnail)
 
-router.post('/Comments', controllers.createComment)
+router.post('/addSnails/:id', controllers.createComment)
 
 router.get('/allSnails', controllers.getAllSnails)
 

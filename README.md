@@ -29,6 +29,7 @@ It is quite interesting how many people come across snails and snap a quick pic 
 - Refrain from the use of profanity
 - If posting a dead or squished snail, please provide a warning
 - Drawings of snails are permitted!
+- Fictional Snail are permitted!
 
 ## Trello
 
@@ -37,3 +38,9 @@ Follow along with me on my Trello Board to track my progress with this project u
 ### Sources Cited
 
 ![wikipedia](https://en.wikipedia.org/wiki/Deroceras_reticulatum)
+![wikiFandom](https://atf.fandom.com/wiki/Snail)
+![cfaes](https://cfaes.osu.edu/news/articles/entomologist-offers-guidance-controlling-slugs-in-no-till-soybean-corn-fields)
+
+### ScreenShot
+
+![screenshot](https://postimg.cc/s1jp8mpz)

@@ -1,5 +1,6 @@
 const Snail = require('../models/snailSchema')
 const Comments = require('../models/commentsSchema')
+const { update } = require('../models/snailSchema')
 
 // Create a new Snail
 const createSnail = async (req, res) => {
@@ -30,7 +31,7 @@ const getAllSnails = async (req, res) => {
 const findOneSnail = async (req, res) => {
   try {
     const { id } = req.params
-    const singleSnail = await Snail.findById(id)
+    const singleSnail = await Snail.findById(id).populate('comments')
     if (singleSnail) {
       return res.status(200).json({ singleSnail })
     }
@@ -71,6 +72,9 @@ const createComment = async (req, res) => {
   try {
     const comment = await new Comments(req.body)
     await comment.save()
+    let updated = await Snail.findById(req.params.id)
+    updated.comments.push(comment._id)
+    updated.save()
     return res.status(201).json({
       comment
     })
