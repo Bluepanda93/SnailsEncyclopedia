@@ -70,9 +70,9 @@ const SnailDetails = () => {
      
       {comments.map((comment) => (
          <ul>
-        <p>{comment.body}</p>
-        <h3>{comment.name}</h3>
-        <h4>{comment.title}</h4>
+        <p>{comment.name}</p>
+        <h3>{comment.title}</h3>
+        <h4>{comment.body}</h4>
         <img src={comment.image}/>
       
       </ul>

@@ -7,7 +7,6 @@ const Nav = () => {
       <div>
         {/* create Links here */}
         <Link to="/">Home</Link>
-        <Link to="/comments">Comments</Link>
         <Link to="/addSnails">Add Snail</Link>
       </div>
     </nav>
