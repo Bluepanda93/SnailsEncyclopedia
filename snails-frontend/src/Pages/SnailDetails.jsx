@@ -20,7 +20,11 @@ const SnailDetails = () => {
     name: '',
     title: '',
     body: '',
-    snail: ''
+    snail: '',
+    image: '',
+    description:'',
+    region:'',
+    link:''
   })
 
   const handleChange = (event) => {
@@ -35,6 +39,7 @@ const SnailDetails = () => {
         setSnail([...snails, updateASnail.data])
         setFormState({image: '', description: '', link: '', name: '', region: ''})
     }
+    
 
     const handleDelete = async (event) => {
       event.preventDefault()
@@ -63,7 +68,7 @@ const SnailDetails = () => {
       <input id="name" value={formState.name} onChange={handleChange} />
       <label htmlFor="region">Region: </label>
       <input id="region" value={formState.region} onChange={handleChange} />
-      <button type="submit">Submit Snail</button>
+      <button type="submit">update Snail</button>
     </form>
     <button onClick={handleDelete}>Delete This Snail</button>
       <Comments />
