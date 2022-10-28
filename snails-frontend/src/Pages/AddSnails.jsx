@@ -16,15 +16,6 @@ const showComments = ( id ) => {
   navigate(`${id}`)
 } 
 
-  // const snailComments = (props) => {
-  //   let navigate = useNavigate
-    
-  //   const handleSubmit = (e) => {
-  //     props.AddSnails(e)
-  //     navigate('/comments')
-  //   }
-
-
 useEffect(() => {
   const apiCall = async () => {
     let response = await axios.get('http://localhost:3001/allSnails')
@@ -38,6 +29,8 @@ const handleChange = (event) => {
   setFormState({ ...formState, [event.target.id]: event.target.value })
 }
 
+
+
 const handleSubmit = async (event) => {
   event.preventDefault()
   let newSnail = await axios
@@ -49,9 +42,9 @@ const handleSubmit = async (event) => {
       console.log(error)
     })
 
+
   updateSnails([...allSnails, newSnail.data])
   setFormState({ image: '', description: '', link: '', name: '', region: '' })
-  // console.log(newSnail.data)
 }
 
 return (
@@ -61,6 +54,9 @@ return (
       {allSnails.map((snails) => (
         <div onClick = {() => showComments(snails._id)}>
         <h3>{snails.name}</h3>
+        <h3>{snails.description}</h3>
+        <h3>{snails.region}</h3>
+        <img src={snails.image} />
         </div>
       ))}
     </div>
@@ -85,5 +81,6 @@ return (
   </div>
 )
 }
+
 
 export default AddSnails

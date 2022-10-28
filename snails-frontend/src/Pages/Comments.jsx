@@ -48,7 +48,10 @@ const Comments = () => {
       <h1>Comments!</h1>
       <div>
         {allSnails.map((snails) => (
+          <div>
           <h3>{snails.name}</h3>
+          <img src={snails.image} />
+          </div>
         ))}
       </div>
       {/* <h3>Input Snail:</h3> */}

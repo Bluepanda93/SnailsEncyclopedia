@@ -149,3 +149,10 @@ button {
   cursor: pointer;
   margin-top: 1em;
 }
+
+.comments {
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 1em;
+}
