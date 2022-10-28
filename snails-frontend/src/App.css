@@ -78,3 +78,41 @@ div {
 .home div {
   flex-direction: column;
 }
+
+.home div {
+  height: 40em;
+  width: 30em;
+}
+
+h2 {
+  text-align: left;
+  font-weight: normal;
+}
+
+h1, h2, h3, h4 {
+  margin: 0;
+}
+
+.navbar {
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  background-color: black;
+  padding: 1em;
+  min-height: 2em;
+  font-family: 'Fuzzy Bubbles', cursive;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  margin-left: 0.5em;
+}
+
+.listings {
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 1em;
+}
