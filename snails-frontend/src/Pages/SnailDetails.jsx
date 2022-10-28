@@ -72,9 +72,9 @@ const SnailDetails = () => {
     </form>
     <button onClick={handleDelete}>Delete This Snail</button>
       <Comments />
-     
+    
       {comments.map((comment) => (
-         <ul className='comments-a'>
+        <ul className='comments-a'>
         <p>{comment.name}</p>
         <h3>{comment.title}</h3>
         <h4>{comment.body}</h4>
@@ -82,7 +82,7 @@ const SnailDetails = () => {
       
       </ul>
       ))}
-       
+      
     </div>
   )
 }

@@ -40,6 +40,7 @@ Follow along with me on my Trello Board to track my progress with this project u
 [wikipedia](https://en.wikipedia.org/wiki/Deroceras_reticulatum)
 [wikiFandom](https://atf.fandom.com/wiki/Snail)
 [cfaes](https://cfaes.osu.edu/news/articles/entomologist-offers-guidance-controlling-slugs-in-no-till-soybean-corn-fields)
+[crateandbasket](https://crateandbasket.com/types-of-snails/)
 
 ### ScreenShot
 
