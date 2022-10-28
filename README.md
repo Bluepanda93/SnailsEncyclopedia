@@ -43,4 +43,4 @@ Follow along with me on my Trello Board to track my progress with this project u
 
 ### ScreenShot
 
-![screenshot](https://postimg.cc/s1jp8mpz)
+![screenshot](/screenshot/Screen%20Shot%202022-10-28%20at%2011.36.19%20AM.png)
