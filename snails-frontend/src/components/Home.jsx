@@ -10,10 +10,19 @@ const Home = () => {
         />
       </div>
       <div>
-        <h1>Snails</h1>
+        <h1>Welcome to the Snail Trail!</h1>
         <h2>
-          
+          The Rules
         </h2>
+        <ul>
+          <li>posts regarding the purchase or sale of any kind are prohibited</li>
+          <li>Pictures or articles not pertaining to snails will be removed</li>
+          <li>Refrain from the use of profanity</li>
+          <li>If posting a dead or squished snail, please provide a warning</li>
+          <li>Drawings of snails are permitted!</li>
+          <li>Fictional Snail are permitted!
+</li>
+        </ul>
       </div>
     </div>
   )
