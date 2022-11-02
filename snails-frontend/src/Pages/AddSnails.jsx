@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
+import { BASE_URL } from '../globals'
 
 function AddSnails() {
   let navigate = useNavigate()
@@ -18,7 +19,7 @@ const showComments = ( id ) => {
 
 useEffect(() => {
   const apiCall = async () => {
-    let response = await axios.get('http://localhost:3001/allSnails')
+    let response = await axios.get(`${BASE_URL}/allSnails`)
     console.log(response.data)
     updateSnails(response.data.allSnails)
     }
@@ -32,9 +33,9 @@ const handleChange = (event) => {
 
 
 const handleSubmit = async (event) => {
-  event.preventDefault()
+  // event.preventDefault()
   let newSnail = await axios
-    .post('http://localhost:3001/allSnails', formState)
+    .post(`${BASE_URL}/allSnails`, formState)
     .then((response) => {
       return response
     })

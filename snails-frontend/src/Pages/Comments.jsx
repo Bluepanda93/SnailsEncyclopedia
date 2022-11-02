@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import {useParams} from 'react-router-dom'
+import { BASE_URL } from '../globals'
 
 const Comments = () => {
     const [allSnails, updateSnails] = useState([])
@@ -16,7 +17,7 @@ const Comments = () => {
   
   useEffect(() => {
     const apiCall = async () => {
-      let response = await axios.get('http://localhost:3001/comments')
+      let response = await axios.get(`${BASE_URL}/comments`)
       console.log(response.data)
       updateSnails(response.data)
     }
@@ -28,9 +29,9 @@ const Comments = () => {
   }
   
   const handleSubmit = async (event) => {
-    event.preventDefault()
+    // event.preventDefault()
     let newSnail = await axios
-      .post(`http://localhost:3001/addSnails/${id}`, formState)
+      .post(`${BASE_URL}/addSnails/${id}`, formState)
       .then((response) => {
         return response
       })

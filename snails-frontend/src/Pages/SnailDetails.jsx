@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { useNavigate, useParams } from 'react-router-dom'
 import Comments from './Comments'
+import { BASE_URL } from '../globals'
 
 const SnailDetails = () => {
   let { id } = useParams()
@@ -9,7 +10,7 @@ const SnailDetails = () => {
   const [comments, setComments] = useState([])
   useEffect(() => {
     const apiCall = async () => {
-      let response = await axios.get(`http://localhost:3001/allSnails/${id}`)
+      let response = await axios.get(`${BASE_URL}/allSnails/${id}`)
       setSnail(response.data.singleSnail)
       setComments(response.data.singleSnail.comments)
       }
@@ -33,17 +34,17 @@ const SnailDetails = () => {
   
 
     const handleUpdate = async (event) => {
-      event.preventDefault()
+      // event.preventDefault()
       let updateASnail = await axios
-        .put(`http://localhost:3001/allSnails/${id}`, formState)
+        .put(`${BASE_URL}/allSnails/${id}`, formState)
         setSnail([...snails, updateASnail.data])
         setFormState({image: '', description: '', link: '', name: '', region: ''})
     }
     
 
     const handleDelete = async (event) => {
-      event.preventDefault()
-      let deleteSnail = await axios.delete(`http://localhost:3001/allSnails/${id}`, formState
+      // event.preventDefault()
+      let deleteSnail = await axios.delete(`${BASE_URL}/allSnails/${id}`, formState
     )
     setSnail([...snails, deleteSnail.data])
     setFormState({ image: '', description: '', link: '', name: '', region: '' })

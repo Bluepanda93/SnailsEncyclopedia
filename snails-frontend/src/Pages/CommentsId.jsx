@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { useNavigate, useParams } from 'react-router-dom'
+import { BASE_URL } from '../globals'
 
 function CommentsId() {
   let navigate = useNavigate()
@@ -28,7 +29,7 @@ const showComments = ( id ) => {
 
 useEffect(() => {
   const apiCall = async () => {
-    let response = await axios.get(`http://localhost:3001/comments/${id}`)
+    let response = await axios.get(`${BASE_URL}/comments/${id}`)
     console.log(response.data)
     updateSnails(response.data)
     }
