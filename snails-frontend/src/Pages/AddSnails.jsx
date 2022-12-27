@@ -57,7 +57,7 @@ return (
         <h3>{snails.name}</h3>
         <h3>{snails.description}</h3>
         <h3>{snails.region}</h3>
-        <img src={snails.image} />
+        <img className='snail-card' src={snails.image} />
         </div>
       ))}
     </div>
