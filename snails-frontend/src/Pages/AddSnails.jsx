@@ -51,7 +51,7 @@ const handleSubmit = async (event) => {
 return (
   <div className="App">
     <h1>Welcome to the Snail Trail!</h1>
-    <div>
+    <div className='container'>
       {allSnails.map((snails) => (
         <div onClick = {() => showComments(snails._id)}>
         <h3>{snails.name}</h3>
